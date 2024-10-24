@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS category (
 CREATE TABLE IF NOT EXISTS movie (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     movieName VARCHAR(100),
-    rating TEXT,
-    duration INTTEGER,
+    rating DOUBLE PRECISION,
+    duration INTEGER,
     category_id INTEGER,
     FOREIGN KEY (category_id) REFERENCES category(id)
 );
@@ -27,14 +27,14 @@ VALUES
 
 INSERT INTO movie (movieName, rating, duration, category_id) 
 VALUES
-  ('Mad Max: Fury Road', 'R', 120, 1),
-  ('Die Hard', 'R', 132, 1),
-  ('Superbad', 'R', 113, 2),
-  ('The Hangover', 'R', 100, 2),
-  ('The Shawshank Redemption', 'R', 142, 3),
-  ('Forrest Gump', 'PG-13', 144, 3),
-  ('A Nightmare on Elm Street', 'R', 91, 4),
-  ('The Conjuring', 'R', 112, 4);
+  ('Mad Max: Fury Road', '9.0', 120, 1),
+  ('Die Hard', '8', 132, 1),
+  ('Superbad', '7.6', 113, 2),
+  ('The Hangover', '4.5', 100, 2),
+  ('The Shawshank Redemption', '9.2', 142, 3),
+  ('Forrest Gump', '8.4', 144, 3),
+  ('A Nightmare on Elm Street', '8', 91, 4),
+  ('The Conjuring', '7.5', 112, 4);
 
 `;
 

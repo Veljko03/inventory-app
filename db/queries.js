@@ -17,8 +17,11 @@ async function insertGenre(genreName) {
 }
 
 async function getGenre(id) {
-  const a = await pool.query("SELECT * from genres where genre_id=$id;", [id]);
-  console.log(a + " this is getGanre");
+  console.log("Raaaaaaaaa");
+
+  const a = await pool.query("SELECT * FROM Genres WHERE genre_id=$1", [id]);
+  console.log(a);
+  return a.rows[0];
 }
 
-module.exports = { allGenres, allMovies, insertGenre, genre_id };
+module.exports = { allGenres, allMovies, insertGenre, getGenre };

@@ -31,10 +31,22 @@ async function addNewGenrePost(req, res) {
   res.redirect("/genres");
 }
 
+async function openGenre(req, res) {
+  let { id } = req.params;
+  //id += 1;
+  console.log(id);
+
+  const single = await db.getGenre(id);
+  //   console.log(single, " singleeee");
+
+  res.render("genre", { g: single });
+}
+
 module.exports = {
   getAllMovies,
   getAllGenres,
   getMainPage,
   addNewGenreGet,
   addNewGenrePost,
+  openGenre,
 };

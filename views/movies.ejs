@@ -1,0 +1,13 @@
+<a href="/">Home page</a>
+<p>----------------------------------</p>
+<a href="/genres">Go to genres </a>
+<h1>All Movies</h1>
+<% if(arrMovies) {%> <% arrMovies.map((movie)=>{ %>
+
+<h4>
+  <%= movie.title %>------ <a href="/<%= movie.movie_id %>">Open</a> -------<a
+    href=""
+    >Delete</a
+  >
+</h4>
+<% }) %> <% } %>

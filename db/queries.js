@@ -79,6 +79,11 @@ async function deleteMovie(id) {
   await pool.query("DELETE FROM movies WHERE movie_id=$1", [id]);
 }
 
+async function deleteGenresWithMovies(id) {
+  await pool.query("DELETE FROM moviegenres WHERE genre_id=$1", [id]);
+  await pool.query("DELETE FROM genres WHERE genre_id=$1", [id]);
+}
+
 module.exports = {
   allGenres,
   allMovies,
@@ -88,4 +93,5 @@ module.exports = {
   insertMovieWithGenre,
   getMoviesFromGenre,
   deleteMovie,
+  deleteGenresWithMovies,
 };

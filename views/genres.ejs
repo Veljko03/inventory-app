@@ -7,7 +7,14 @@
 
 <h4>
   <%= genre.ganrename %> ------
-  <a href="/genres/<%= genre.genre_id %>">Open</a> -------<a href="">Delete</a>
+  <a href="/genres/<%= genre.genre_id %>">Open</a> -------
+  <form
+    action="/genreDel/<%= genre.genre_id %>?_method=DELETE"
+    method="POST"
+    style="display: inline"
+  >
+    <button type="submit">Delete</button>
+  </form>
 </h4>
 
 <% }) %> <% } %>

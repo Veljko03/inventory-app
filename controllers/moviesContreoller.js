@@ -89,6 +89,15 @@ async function deleteMoviesFormMoviesANDgenres(req, res) {
 
   res.redirect("/movies");
 }
+async function deleteGenreWithAllMovies(req, res) {
+  let { id } = req.params;
+  console.log("usao");
+
+  await db.deleteGenresWithMovies(id);
+  console.log("Zavrsio");
+
+  res.redirect("/genres");
+}
 
 module.exports = {
   getAllMovies,
@@ -101,4 +110,5 @@ module.exports = {
   addNewMovieGet,
   addMoviePost,
   deleteMoviesFormMoviesANDgenres,
+  deleteGenreWithAllMovies,
 };

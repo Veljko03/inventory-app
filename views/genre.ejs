@@ -1,5 +1,11 @@
-<% if(g) {%>
+<% if (g) { %>
+<a href="/genres">Go back</a>
+<a href="/">Go to home page</a>
 
 <h1><%= g.ganrename %></h1>
 
-<% } %>
+<% if (mo && mo.length > 0) { %> <% mo.forEach((m) => { %>
+<h2><%= m.title %></h2>
+<% }) %> <% } else { %>
+<h2>No movies available.</h2>
+<% } %> <% } %>

@@ -2,12 +2,14 @@
 <p>----------------------------------</p>
 <a href="/genres">Go to genres </a>
 <h1>All Movies</h1>
+<a href="/newMovie">Add new movie</a>
 <% if(arrMovies) {%> <% arrMovies.map((movie)=>{ %>
 
 <h4>
-  <%= movie.title %>------ <a href="/<%= movie.movie_id %>">Open</a> -------<a
-    href=""
-    >Delete</a
-  >
+  <%= movie.title %>------
+  <a href="/movies/<%= movie.movie_id %>">Open</a> -------
+  <button>
+    <a href="/moviesDel/<%= movie.movie_id  %>">Delete Product</a>
+  </button>
 </h4>
 <% }) %> <% } %>

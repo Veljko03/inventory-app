@@ -6,7 +6,11 @@ router.get("/", controller.getMainPage);
 router.get("/movies", controller.getAllMovies);
 router.get("/genres", controller.getAllGenres);
 router.get("/newGenre", controller.addNewGenreGet);
-router.post("/newGenre", controller.addNewGenrePost);
-router.get("/:id", controller.openGenre);
+router.post("/addGenre", controller.addNewGenrePost);
+router.get("/genres/:id", controller.openGenre);
+router.get("/movies/:id", controller.openMovie);
+router.post("/newMovie", controller.addMoviePost);
+router.get("/newMovie", controller.addNewMovieGet);
+router.delete("/moviesDel/:id", controller.deleteMoviesFormMoviesANDgenres);
 
 module.exports = router;

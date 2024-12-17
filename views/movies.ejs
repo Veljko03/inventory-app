@@ -8,8 +8,12 @@
 <h4>
   <%= movie.title %>------
   <a href="/movies/<%= movie.movie_id %>">Open</a> -------
-  <button>
-    <a href="/moviesDel/<%= movie.movie_id  %>">Delete Product</a>
-  </button>
+  <form
+    action="/moviesDel/<%= movie.movie_id %>?_method=DELETE"
+    method="POST"
+    style="display: inline"
+  >
+    <button type="submit">Delete</button>
+  </form>
 </h4>
 <% }) %> <% } %>

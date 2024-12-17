@@ -75,8 +75,8 @@ async function getMovie(id) {
 }
 
 async function deleteMovie(id) {
-  //await pool.query("DELETE FROM movies WHERE movie_id=$1", [id]);
-  // await pool.query("DELETE FORM moviegenres WHERE movie_id=$1", [id]);
+  await pool.query("DELETE FROM moviegenres WHERE movie_id=$1", [id]);
+  await pool.query("DELETE FROM movies WHERE movie_id=$1", [id]);
 }
 
 module.exports = {

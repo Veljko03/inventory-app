@@ -81,9 +81,13 @@ async function getSingleMovie(id) {
 
 async function deleteMoviesFormMoviesANDgenres(req, res) {
   let { id } = req.params;
-  console.log(req, " iddddddddd");
+  console.log("Aaaaaaaaaaa");
 
-  // await db.deleteMovie(id);
+  console.log(req.params.id, " iddddddddd");
+
+  await db.deleteMovie(id);
+
+  res.redirect("/movies");
 }
 
 module.exports = {

@@ -15,6 +15,14 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use((req, res, next) => {
+  if (req.method === "POST" && req.query._method === "UPDATE") {
+    req.method = "UPDATE";
+  }
+  next();
+});
+
 app.use(index);
 
 const PORT = 3000;

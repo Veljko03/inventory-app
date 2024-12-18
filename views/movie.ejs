@@ -7,5 +7,12 @@
 <h3>Release year: <%= g.release_year %></h3>
 <h3>Rating: <%= g.rating %></h3>
 <h3>Description: <%= g.description %></h3>
+<form
+  action="/updateMovie/<%= g.movie_id %>?_method=UPDATE"
+  method="POST"
+  style="display: inline"
+>
+  <button type="submit">Delete</button>
+</form>
 
 <% } %>
